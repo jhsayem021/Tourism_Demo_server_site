@@ -3,7 +3,7 @@ const { MongoClient } = require('mongodb');
 require('dotenv').config();
 const cors = require('cors');
 const ObjectID = require('mongodb').ObjectId;
-// var admin = require("firebase-admin");
+var admin = require("firebase-admin");
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -12,11 +12,11 @@ const port = process.env.PORT || 5000;
 
 
 
-// var serviceAccount = require("./sa-tourism-planner-firebase-adminsdk-jelyc-cc93fd486e (1).json");
+var serviceAccount = require("./sa-tourism-planner-firebase-adminsdk-jelyc-cc93fd486e (1).json");
 
-// admin.initializeApp({
-//   credential: admin.credential.cert(serviceAccount)
-// });
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
 
 
 // middleware
