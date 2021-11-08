@@ -61,10 +61,10 @@ async function run() {
         // get all products 
         app.get('/services', async (req, res) => {
             const cursor = productCollection.find({});
-            const allProducts = await cursor.toArray();
+            const products = await cursor.toArray();
                 
             res.send({              
-                allProducts
+                products
             });
         });
 
