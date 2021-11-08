@@ -51,8 +51,10 @@ async function run() {
         //GET 6 Products API
         app.get('/services', async (req, res) => {
             const cursor = productCollection.find({});
+            const p = coursor.length;
+            
             const size = 6;
-            const products = await cursor.limit(size).toArray();
+            const products = await cursor.skip(p-size).limit(size).toArray();
                 
             res.send({              
                 products
