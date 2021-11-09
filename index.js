@@ -57,6 +57,14 @@ async function run() {
                 products
             });
         });
+        app.get('/booked_service', async (req, res) => {
+            const cursor = orderCollection.find({});
+            const order = await cursor.toArray();
+                
+            res.send({              
+                order
+            });
+        });
 
 
         // Use POST to get data by keys
